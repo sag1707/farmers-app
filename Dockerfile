@@ -1,18 +1,17 @@
 FROM node:latest
 
-WORKDIR /home/hp/projects/farmers-app
-
+WORKDIR /home/academics/SEM2/SPE/project/book_app
 
 COPY . .
+RUN npm install
+
+WORKDIR /home/academics/SEM2/SPE/project/book_app/frontend
 
 RUN npm install
 
-WORKDIR /home/hp/projects/farmers-app/frontend
-
-RUN npm install
-
-WORKDIR /home/hp/projects/farmers-app
+WORKDIR /home/academics/SEM2/SPE/project/book_app
 
 
-
-CMD ["npm", "run" , "dev"]
+EXPOSE 3000
+EXPOSE 5000
+CMD [ "npm", "run", "dev"]
